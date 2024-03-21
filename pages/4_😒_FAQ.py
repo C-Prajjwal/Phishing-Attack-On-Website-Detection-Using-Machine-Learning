@@ -61,7 +61,6 @@ def phishing_quiz():
 
 # Display the quiz
 st.title("Phishing Quiz")
-st.markdown("<hr>", unsafe_allow_html=True)
 phishing_quiz()
 
 
