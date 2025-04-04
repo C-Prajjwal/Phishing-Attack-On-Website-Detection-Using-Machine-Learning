@@ -1,36 +1,45 @@
-# phishing-website-detection-content-based
-This is an End-to-End Machine Learning Project which focuses on phishing websites to classify phishing and legitimate ones. Particularly, We focused on content-based features like html tag based features. You can find feature extraction, data collection, preparation process here. Also, building ML models, evaluating them are available here.
+# Phishing-Website-Detection
+The emphasis is on examining and obtainingURL-basedcharacteristics to effectively identify phishingattacksondubious websites. These characteristics aredirectlyobtained from the URL's structure, which is anessentialinformation source. A collection of rules that extracthidden patterns and relations fromthe dataset isfirstconstructed in order to guarantee the robustnessoftherules driving feature extraction. To determinetheserules,a thorough analysis of the URL structure is conducted.The features are retrieved and then mergedintoafeaturevector, which is what the models use as input.Therearea lot of machine learning classifiers used, suchtendifferent models and one ensemble model. Thisensemble model improves website classificationaccuracy by utilising the combined intelligenceofthevarious models. The optimal classifier is determinedbya thorough evaluation process using performanceindicators like accuracy and error rate. It's interestingtonote that the Ensemble Model attains anoutstandingaccuracy of 95%, while the XGBoost model emergesasthe best classifier with an incredible 97.4%accuracy
 
-## inputs
-- csv files of phishing and legitimate URLs
-  - verified_online.csv --> phishing websites URLs from phishtank.org
-  - tranco_list.csv --> legitimate websites URLs from tranco-list.eu
-  
-## general flow
-- Use csv file to get URLs
-- Send a request to each URL and receive a response by requests library of python
-- Use the content of response and parse it by BeautifulSoup module
-- Extract features and create a vector which contains numerical values for each feature
-- Repeat feature extraction process for all content\websites and create a structured dataframe
-- Add label at the end to the dataframes | 1 for phishing 0 for legitimate
-- Save the dataframe as csv and structured_data files are ready!
-  - Check "structured_data_legitimate.csv" and "structured_data_phishing.csv" files. 
-- After obtaining structured data, you can use combine them and use them as train and test data
-- You can split data as train and test like in the machine_learning.py first part, or you can implement K-fold cross-validation like in the second part of the same file. We implemented K-fold as K=5.
-- Then We implemented five different ML models:
-  - Support Vector Machine
-  - Gaussian Naive Bayes
-  - Decision Tree
-  - Random Forest
-  - AdaBoost
-- You can obtain the confusion matrix, and performance measures: accuracy, precision, recall
-- Finally, We visualized the performance measures for all models.
-  - Naive Bayes is the best for my case.
+# Datasets
+The dataset includes approximately11,000URLs from websites with 30 website parametersandaclass-level label indicating if a website, either 1or-1,isa phishing website. When it comes to onlinefeatures,this collection of characteristics is quite variable: URLstructure, several indicators (such as the useof HTTPS,the length of domain registration, and the existenceofsymbols or redirections), etc. There was noneedforadditional categorical encoding because everyfeaturewas encoded in integer format. Inspectionrevealedthatthe dataset is free of outliers and missing values, makingit suitable for analysis.
 
-## important notes
-- features are content-based and need BeautifulSoup module's methods and fields etc So, you should install it.
+# List of Modules
+The project has been implemented by dividing the entire project into three modules.They are as follows:
 
+**1 Data Collection and Preprocessing.
+2 Feature Extraction.
+3 Classification.**
 
-## dataset
-- with your URL list, you can create your own dataset by using data_collector python file.
+# List of Modules Used:
+
+ Numpy
+ Pandas
+ Matplotlib
+ Seaborn
+ Beautifulsoup4
+ Streamlit
+ Requests
+ Scikit_Learn
+ Urllib3
+ Streamlit option menu
+ Pickle 
+
+# List of Models
+
+The project has been implemented by using ten different models and along with ensemble model.They are as follows:
+• Gradient Boosting
+• Catboost
+• XGBoost
+• Random Forest
+• Support Vector Machine
+• Multi Layer Perceptron
+• Decision Tree
+• K-Nearest Neighbors
+• Logistic Regression
+• Navie Bayes
+• Ensemble 
+
+# Conclusion
+The machine learning for phishing website detection represents a significant advancement in combating the ever-evolving threat landscape of cyberattacks. Through the integration of sophisticated algorithms and comprehensive testing methodologies, machine learning models can effectively distinguish between legitimate websites and malicious phishing attempts. By harnessing the power of feature extraction, classification techniques, and ensemble learning, these models can analyze URL characteristics and user behavior patterns to identify potential threats with high accuracy. Furthermore, the development of modular and scalable solutions, coupled with rigorous testing at each stage, ensures the reliability and efficacy of the detection system. As the sophistication of phishing attacks continues to increase, the adoption of machine learning-based approaches offers a proactive and adaptive defense mechanism to safeguard users and organizations against cyber threats. By fostering collaboration between data scientists, cybersecurity experts, and industry stakeholders, we can further enhance the capabilities ofthese detection systems and fortify our digital ecosystems against malicious activities. 
 
